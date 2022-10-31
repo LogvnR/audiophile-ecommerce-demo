@@ -17,6 +17,9 @@ module.exports = {
         peach: '#FBAF85',
         error: '#CD2C2C',
       },
+      backgroundImage: {
+        'home-header': "url('/images/image-header.jpg')",
+      },
     },
   },
   plugins: [],
