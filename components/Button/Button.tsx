@@ -22,7 +22,7 @@ const Button = ({ type, style, children }: ButtonProps) => {
           style === 'Outline'
             ? 'bg-transparent text-black border border-black'
             : undefined
-        } font-bold uppercase tracking tracking-wider text-sm`}
+        } font-semibold uppercase tracking tracking-wider text-sm`}
       >
         See Product
       </button>
@@ -31,14 +31,14 @@ const Button = ({ type, style, children }: ButtonProps) => {
 
   if (type === 'Cart') {
     return (
-      <button className="w-[160px] h-[48px] bg-burnt-orange font-bold uppercase tracking tracking-wider text-sm">
+      <button className="w-[160px] h-[48px] bg-burnt-orange font-semibold uppercase tracking tracking-wider text-sm">
         Add To Cart
       </button>
     );
   }
 
   return (
-    <button className="w-full h-[48px] bg-burnt-orange font-bold uppercase tracking tracking-wider text-sm">
+    <button className="w-full h-[48px] bg-burnt-orange font-semibold uppercase tracking tracking-wider text-sm">
       {children}
     </button>
   );
