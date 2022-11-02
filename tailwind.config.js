@@ -19,6 +19,8 @@ module.exports = {
       },
       backgroundImage: {
         'home-header': "url('/images/image-header.jpg')",
+        'home-circles': "url('/images/pattern-circles.svg')",
+        'home-zx7': "url('/images/image-speaker-zx7.jpg')",
       },
     },
   },
