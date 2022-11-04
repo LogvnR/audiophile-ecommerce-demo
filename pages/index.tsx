@@ -8,6 +8,7 @@ import earphonesPhoto from '../assets/home/mobile/image-earphones-yx1.jpg';
 
 import Button from '../components/Button/Button';
 import ShopCategories from '../components/Shop Categories/ShopCategories';
+import Footer from '../components/Footer/Footer';
 
 const Home = () => {
   return (
@@ -85,6 +86,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <Footer hasFooterAddition={true} />
     </main>
   );
 };
