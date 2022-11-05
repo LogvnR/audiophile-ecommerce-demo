@@ -1,6 +1,7 @@
 import Image, { StaticImageData } from 'next/image';
 import { CgChevronRight } from 'react-icons/cg';
 import React from 'react';
+import Link from 'next/link';
 
 interface CategoryCardProps {
   image: StaticImageData;
@@ -23,10 +24,12 @@ const CategoryCard = ({ image, title }: CategoryCardProps) => {
         <h4 className="font-bold tracking-widest text-black uppercase font-Manrope">
           {title}
         </h4>
-        <button className="flex items-center justify-center gap-2 my-4 font-bold tracking-wider text-black uppercase font-Manrope">
-          <span className="opacity-50">Shop</span>{' '}
-          <CgChevronRight size={22} className="text-burnt-orange" />
-        </button>
+        <Link href={`/${title.toLowerCase()}`}>
+          <button className="flex items-center justify-center gap-2 my-4 font-bold tracking-wider text-black uppercase font-Manrope">
+            <span className="opacity-50">Shop</span>{' '}
+            <CgChevronRight size={22} className="text-burnt-orange" />
+          </button>
+        </Link>
       </div>
     </div>
   );

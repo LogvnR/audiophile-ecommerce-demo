@@ -4,6 +4,7 @@ import React from 'react';
 import logo from '../../assets/shared/desktop/logo.svg';
 import headphoneUser from '../../assets/shared/mobile/image-best-gear.jpg';
 import { GrFacebook, GrTwitter, GrInstagram } from 'react-icons/gr';
+import Link from 'next/link';
 
 interface FooterProps {
   hasFooterAddition: boolean;
@@ -13,7 +14,7 @@ const Footer = ({ hasFooterAddition }: FooterProps) => {
   return (
     <>
       {hasFooterAddition ? (
-        <div className="w-full px-6 mb-36 font-Manrope">
+        <div className="w-full px-6 my-36 font-Manrope">
           <Image
             src={headphoneUser}
             alt="Headphone User"
@@ -37,7 +38,9 @@ const Footer = ({ hasFooterAddition }: FooterProps) => {
         <div className="w-[101px] h-[4px] bg-burnt-orange" />
         <Image src={logo} alt="audiophile.com" width={143} height={25} />
         <div className="flex flex-col gap-5 text-sm font-bold tracking-wider text-center uppercase">
-          <p>Home</p>
+          <Link href="/">
+            <p>Home</p>
+          </Link>
           <p>Headphones</p>
           <p>Speakers</p>
           <p>Earphones</p>
