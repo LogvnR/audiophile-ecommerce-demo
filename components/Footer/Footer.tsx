@@ -41,9 +41,15 @@ const Footer = ({ hasFooterAddition }: FooterProps) => {
           <Link href="/">
             <p>Home</p>
           </Link>
-          <p>Headphones</p>
-          <p>Speakers</p>
-          <p>Earphones</p>
+          <Link href={`/products/headphones`}>
+            <p>Headphones</p>
+          </Link>
+          <Link href={`/products/speakers`}>
+            <p>Speakers</p>
+          </Link>
+          <Link href={`/products/earphones`}>
+            <p>Earphones</p>
+          </Link>
         </div>
         <p className="text-sm font-medium leading-6 text-center opacity-50">
           Audiophile is an all in one stop to fulfill your audio needs. We're a

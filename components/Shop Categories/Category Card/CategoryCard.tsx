@@ -24,7 +24,7 @@ const CategoryCard = ({ image, title }: CategoryCardProps) => {
         <h4 className="font-bold tracking-widest text-black uppercase font-Manrope">
           {title}
         </h4>
-        <Link href={`/${title.toLowerCase()}`}>
+        <Link href={`/products/${title.toLowerCase()}`}>
           <button className="flex items-center justify-center gap-2 my-4 font-bold tracking-wider text-black uppercase font-Manrope">
             <span className="opacity-50">Shop</span>{' '}
             <CgChevronRight size={22} className="text-burnt-orange" />
