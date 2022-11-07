@@ -2,13 +2,13 @@ import React from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
-import Navbar from '../../components/Navbar/Navbar';
-import ProductCard from '../../components/Product Card/ProductCard';
+import Navbar from '../../../components/Navbar/Navbar';
+import ProductCard from '../../../components/Product Card/ProductCard';
 
-import { data } from '../../helpers/data';
+import { data } from '../../../helpers/data';
 
-import ShopCategories from '../../components/Shop Categories/ShopCategories';
-import Footer from '../../components/Footer/Footer';
+import ShopCategories from '../../../components/Shop Categories/ShopCategories';
+import Footer from '../../../components/Footer/Footer';
 
 const headphones = () => {
   const router = useRouter();
@@ -39,6 +39,7 @@ const headphones = () => {
             description={product.description}
             newProduct={product.newProduct}
             image={product.image}
+            category={product.category}
           />
         ))}
       </div>

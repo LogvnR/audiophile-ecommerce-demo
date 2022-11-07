@@ -1,4 +1,5 @@
 import Image, { StaticImageData } from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 import Button from '../Button/Button';
@@ -8,6 +9,7 @@ interface ProductCardProps {
   newProduct: boolean;
   description: string;
   image: StaticImageData;
+  category: string;
 }
 
 const ProductCard = ({
@@ -15,6 +17,7 @@ const ProductCard = ({
   newProduct,
   description,
   image,
+  category,
 }: ProductCardProps) => {
   return (
     <div className="flex flex-col items-center font-Manrope">
@@ -30,7 +33,9 @@ const ProductCard = ({
       <p className="mb-8 font-medium leading-6 text-center text-black opacity-50">
         {description}
       </p>
-      <Button type="Product" style="Standard" />
+      <Link href={`/products/${category}/${name.replace(/\s/g, '-')}`}>
+        <Button type="Product" style="Standard" />
+      </Link>
     </div>
   );
 };

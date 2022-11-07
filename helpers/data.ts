@@ -91,10 +91,10 @@ export const data: ProductContent[] = [
   {
     id: 2,
     category: 'headphones',
-    name: 'xx59 headphones',
+    name: 'xx99 mark i headphones',
     newProduct: false,
     description:
-      'Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.',
+      'As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.',
     image: xx99Mark1,
     price: 1750,
     features: [
@@ -138,10 +138,10 @@ export const data: ProductContent[] = [
   {
     id: 3,
     category: 'headphones',
-    name: 'xx99 mark i headphones',
+    name: 'xx59 headphones',
     newProduct: false,
     description:
-      'As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.',
+      'Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.',
     image: xx59,
     price: 899,
     features: [
