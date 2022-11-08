@@ -16,13 +16,23 @@ const ProductInfo = ({ ...product }: ProductContent) => {
           </p>
         </Link>
       </section>
-      <section className="mb-16">
+      <section className="flex flex-col gap-5 mb-16">
         <Image src={product.image} alt={product.name} priority />
-        <p>new product</p>
-        <h2>{product.name}</h2>
-        <p>{product.description}</p>
-        <h4>$ {product.price.toLocaleString()}</h4>
-        <div className="flex items-center justify-center w-full gap-4">
+        {product.newProduct ? (
+          <p className="text-sm text-burnt-orange uppercase tracking-[10px]">
+            new product
+          </p>
+        ) : null}
+        <h2 className="text-2xl font-bold tracking-wider text-black uppercase">
+          {product.name}
+        </h2>
+        <p className="font-medium leading-6 text-black opacity-50 text-[15px]">
+          {product.description}
+        </p>
+        <h4 className="text-lg font-bold tracking-wider text-black">
+          $ {product.price.toLocaleString()}
+        </h4>
+        <div className="flex items-center justify-center w-full gap-4 mt-4">
           <Counter />
           <Button type="Cart" />
         </div>
@@ -60,6 +70,25 @@ const ProductInfo = ({ ...product }: ProductContent) => {
         {product.productPhotos.map((photo) => (
           <Image src={photo} alt="Product Photo" className="mb-5 rounded-lg" />
         ))}
+      </section>
+      <section className="mb-16">
+        <h3 className="mb-5 text-2xl font-bold leading-9 tracking-wider text-center text-black uppercase">
+          you may also like
+        </h3>
+        <div className="flex flex-col w-full">
+          {product.productReference.map((additional) => (
+            <div className="flex flex-col items-center w-full mb-16 gap-y-6">
+              <Image
+                src={additional.referencePhoto}
+                alt={`Reference Photo for ${additional.referenceName}`}
+              />
+              <h4 className="text-2xl font-bold leading-9 tracking-wider text-center text-black uppercase ">
+                {additional.referenceName}
+              </h4>
+              <Button type="Product" style="Standard" />
+            </div>
+          ))}
+        </div>
       </section>
     </>
   );

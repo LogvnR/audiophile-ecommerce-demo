@@ -8,6 +8,8 @@ import { ProductContent } from '../../../../helpers/types';
 import Navbar from '../../../../components/Navbar/Navbar';
 import Link from 'next/link';
 import ProductInfo from '../../../../components/Product Info/ProductInfo';
+import ShopCategories from '../../../../components/Shop Categories/ShopCategories';
+import Footer from '../../../../components/Footer/Footer';
 
 const index = () => {
   const router = useRouter();
@@ -33,6 +35,8 @@ const index = () => {
           <ProductInfo {...product} />
         ))}
       </div>
+      <ShopCategories />
+      <Footer hasFooterAddition={true} />
     </main>
   );
 };
