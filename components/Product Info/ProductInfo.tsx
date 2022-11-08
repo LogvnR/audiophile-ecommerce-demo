@@ -85,7 +85,17 @@ const ProductInfo = ({ ...product }: ProductContent) => {
               <h4 className="text-2xl font-bold leading-9 tracking-wider text-center text-black uppercase ">
                 {additional.referenceName}
               </h4>
-              <Button type="Product" style="Standard" />
+              <Link
+                href={`/products/${product.category}/${
+                  additional.referenceCategory === 'speaker'
+                    ? additional.referenceName.replace(/\s/g, '-')
+                    : additional.referenceName.replace(/\s/g, '-') +
+                      '-' +
+                      additional.referenceCategory
+                }`}
+              >
+                <Button type="Product" style="Standard" />
+              </Link>
             </div>
           ))}
         </div>

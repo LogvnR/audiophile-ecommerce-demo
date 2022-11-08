@@ -2,7 +2,7 @@ import { StaticImageData } from 'next/image';
 
 export type ProductContent = {
   id: number;
-  category: string;
+  category: 'headphones' | 'speakers' | 'earphones';
   name: string;
   newProduct: boolean;
   description: string;
@@ -21,5 +21,6 @@ interface Included {
 
 interface ProductReference {
   referenceName: string;
+  referenceCategory: 'headphones' | 'speaker' | 'earphones';
   referencePhoto: StaticImageData;
 }

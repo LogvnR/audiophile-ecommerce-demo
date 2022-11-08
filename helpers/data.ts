@@ -76,14 +76,17 @@ export const data: ProductContent[] = [
     productReference: [
       {
         referenceName: 'xx99 mark i',
+        referenceCategory: 'headphones',
         referencePhoto: xx99Mark1Preview,
       },
       {
         referenceName: 'xx59',
+        referenceCategory: 'headphones',
         referencePhoto: xx59Preview,
       },
       {
         referenceName: 'zx9 speaker',
+        referenceCategory: 'speaker',
         referencePhoto: zx9Preview,
       },
     ],
@@ -123,14 +126,17 @@ export const data: ProductContent[] = [
     productReference: [
       {
         referenceName: 'xx99 mark ii',
+        referenceCategory: 'headphones',
         referencePhoto: xx99Mark2Preview,
       },
       {
         referenceName: 'xx59',
+        referenceCategory: 'headphones',
         referencePhoto: xx59Preview,
       },
       {
         referenceName: 'zx9 speaker',
+        referenceCategory: 'speaker',
         referencePhoto: zx9Preview,
       },
     ],
@@ -170,14 +176,17 @@ export const data: ProductContent[] = [
     productReference: [
       {
         referenceName: 'xx99 mark ii',
+        referenceCategory: 'headphones',
         referencePhoto: xx99Mark2Preview,
       },
       {
         referenceName: 'xx99 mark i',
+        referenceCategory: 'headphones',
         referencePhoto: xx99Mark1Preview,
       },
       {
         referenceName: 'zx9 speaker',
+        referenceCategory: 'speaker',
         referencePhoto: zx9Preview,
       },
     ],
@@ -221,14 +230,17 @@ export const data: ProductContent[] = [
     productReference: [
       {
         referenceName: 'zx7 speaker',
+        referenceCategory: 'speaker',
         referencePhoto: zx7Preview,
       },
       {
         referenceName: 'xx99 mark i',
+        referenceCategory: 'headphones',
         referencePhoto: xx99Mark1Preview,
       },
       {
         referenceName: 'xx59',
+        referenceCategory: 'headphones',
         referencePhoto: xx59Preview,
       },
     ],
@@ -272,14 +284,17 @@ export const data: ProductContent[] = [
     productReference: [
       {
         referenceName: 'zx9 speaker',
+        referenceCategory: 'speaker',
         referencePhoto: zx9Preview,
       },
       {
         referenceName: 'xx99 mark i',
+        referenceCategory: 'headphones',
         referencePhoto: xx99Mark1Preview,
       },
       {
         referenceName: 'xx59',
+        referenceCategory: 'headphones',
         referencePhoto: xx59Preview,
       },
     ],
@@ -323,14 +338,17 @@ export const data: ProductContent[] = [
     productReference: [
       {
         referenceName: 'xx99 mark i',
+        referenceCategory: 'headphones',
         referencePhoto: xx99Mark1Preview,
       },
       {
         referenceName: 'xx59',
+        referenceCategory: 'headphones',
         referencePhoto: xx59Preview,
       },
       {
         referenceName: 'zx9 speaker',
+        referenceCategory: 'speaker',
         referencePhoto: zx9Preview,
       },
     ],
