@@ -31,7 +31,7 @@ const Button = ({ type, style, children }: ButtonProps) => {
 
   if (type === 'Cart') {
     return (
-      <button className="w-[160px] h-[48px] bg-burnt-orange font-semibold uppercase tracking tracking-wider text-sm">
+      <button className="w-[160px] h-[48px] bg-burnt-orange text-white font-semibold uppercase tracking tracking-wider text-sm">
         Add To Cart
       </button>
     );
