@@ -9,6 +9,7 @@ import earphonesPhoto from '../assets/home/mobile/image-earphones-yx1.jpg';
 import Button from '../components/Button/Button';
 import ShopCategories from '../components/Shop Categories/ShopCategories';
 import Footer from '../components/Footer/Footer';
+import Link from 'next/link';
 
 const Home = () => {
   return (
@@ -39,7 +40,9 @@ const Home = () => {
               Experience natural, lifelike audio and exceptional build quality
               made for the passionate music enthusiast.
             </p>
-            <Button type="Product" style="Standard" />
+            <Link href="/products/headphones/xx99-mark-ii-headphones">
+              <Button type="Product" style="Standard" />
+            </Link>
           </div>
         </div>
       </div>
@@ -61,7 +64,9 @@ const Home = () => {
               Upgrade to premium speakers that are phenomenally built to deliver
               truly remarkable sound.
             </p>
-            <Button type="Product" style="Black" />
+            <Link href="/products/headphones/zx9-speaker">
+              <Button type="Product" style="Black" />
+            </Link>
           </div>
         </div>
         {/* == Grey ZX7 Speaker Card */}
@@ -69,7 +74,9 @@ const Home = () => {
           <h2 className="text-3xl font-bold tracking-wider text-black uppercase font-Manrope">
             zx7 speaker
           </h2>
-          <Button type="Product" style="Outline" />
+          <Link href="/products/headphones/zx7-speaker">
+            <Button type="Product" style="Outline" />
+          </Link>
         </div>
         {/* == Dual Yx1 Earphones Card */}
         <div className="w-full h-[424px] flex flex-col gap-6">
@@ -82,7 +89,9 @@ const Home = () => {
             <h2 className="text-3xl font-bold tracking-wider text-black uppercase font-Manrope">
               yx1 earphones
             </h2>
-            <Button type="Product" style="Outline" />
+            <Link href="/products/headphones/yx1-earphones">
+              <Button type="Product" style="Outline" />
+            </Link>
           </div>
         </div>
       </div>
