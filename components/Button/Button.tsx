@@ -38,7 +38,7 @@ const Button = ({ type, style, children }: ButtonProps) => {
   }
 
   return (
-    <button className="w-full h-[48px] bg-burnt-orange font-semibold uppercase tracking tracking-wider text-sm">
+    <button className="w-full h-[48px] bg-burnt-orange text-white font-semibold uppercase tracking tracking-wider text-sm">
       {children}
     </button>
   );
