@@ -8,6 +8,8 @@ import menu from '../../assets/shared/tablet/icon-hamburger.svg';
 import cart from '../../assets/shared/desktop/icon-cart.svg';
 import Button from '../Button/Button';
 import ShopCategories from '../Shop Categories/ShopCategories';
+import CartItem from '../Cart Item/CartItem';
+import Cart from '../Cart/Cart';
 
 interface NavbarProps {
   variant: 'transparent' | 'black';
@@ -26,28 +28,7 @@ const Navbar = ({ variant }: NavbarProps) => {
         className="mt-12"
         overlayBlur={3}
       >
-        <div className="flex flex-col w-full font-Manrope p-2">
-          <section className="flex w-full justify-between items-center mb-4">
-            <h4 className="font-bold text-black uppercase text-lg tracking tracking-wider">
-              cart (3)
-            </h4>
-            <h4 className="font-medium text-black opacity-50 leading-4 border-b border-black/50">
-              Remove all
-            </h4>
-          </section>
-          <p className="text-center w-full text-black opacity-50 tracking-wide my-8 italic">
-            Your Audiophile Cart is empty.
-          </p>
-          <section className="flex w-full justify-between items-center my-4">
-            <h4 className="font-medium text-black opacity-50 leading-4 uppercase">
-              total
-            </h4>
-            <h4 className="font-bold text-black uppercase text-lg tracking tracking-wider">
-              $ 9,999
-            </h4>
-          </section>
-          <Button type="Custom">Checkout</Button>
-        </div>
+        <Cart />
       </Modal>
 
       <nav

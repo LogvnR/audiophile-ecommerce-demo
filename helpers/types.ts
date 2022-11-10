@@ -24,3 +24,11 @@ interface ProductReference {
   referenceCategory: 'headphones' | 'speaker' | 'earphones';
   referencePhoto: StaticImageData;
 }
+
+export type CartProductContent = {
+  id: number;
+  name: string;
+  image: StaticImageData;
+  price: number;
+  quantity: number;
+};

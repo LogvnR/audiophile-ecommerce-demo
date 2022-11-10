@@ -28,13 +28,13 @@ const ProductCard = ({
         </p>
       ) : null}
       <h4 className="w-2/3 my-6 text-2xl font-bold text-center text-black uppercase">
-        {name}
+        {name + ' ' + category}
       </h4>
       <p className="mb-8 font-medium leading-6 text-center text-black opacity-50">
         {description}
       </p>
       <Link href={`/products/${category}/${name.replace(/\s/g, '-')}`}>
-        <Button type="Product" style="Standard" />
+        <Button variant="Product" color="Standard" />
       </Link>
     </div>
   );

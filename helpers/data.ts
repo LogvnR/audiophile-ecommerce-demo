@@ -40,7 +40,7 @@ export const data: ProductContent[] = [
   {
     id: 1,
     category: 'headphones',
-    name: 'xx99 mark ii headphones',
+    name: 'xx99 mark ii',
     newProduct: true,
     description:
       'The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.',
@@ -94,7 +94,7 @@ export const data: ProductContent[] = [
   {
     id: 2,
     category: 'headphones',
-    name: 'xx99 mark i headphones',
+    name: 'xx99 mark i',
     newProduct: false,
     description:
       'As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.',
@@ -144,7 +144,7 @@ export const data: ProductContent[] = [
   {
     id: 3,
     category: 'headphones',
-    name: 'xx59 headphones',
+    name: 'xx59',
     newProduct: false,
     description:
       'Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.',
@@ -194,7 +194,7 @@ export const data: ProductContent[] = [
   {
     id: 4,
     category: 'speakers',
-    name: 'zx9 speaker',
+    name: 'zx9',
     newProduct: true,
     description:
       'Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.',
@@ -248,7 +248,7 @@ export const data: ProductContent[] = [
   {
     id: 5,
     category: 'speakers',
-    name: 'zx7 speaker',
+    name: 'zx7',
     newProduct: false,
     description:
       'Stream high quality sound wirelessly with minimal loss. The ZX7 bookshelf speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.',
@@ -302,7 +302,7 @@ export const data: ProductContent[] = [
   {
     id: 6,
     category: 'earphones',
-    name: 'yx1 earphones',
+    name: 'yx1',
     newProduct: true,
     description:
       'Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.',

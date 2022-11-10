@@ -1,12 +1,41 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import { useState, useEffect } from 'react';
 
-import { ProductContent } from '../../helpers/types';
+import { ProductContent, CartProductContent } from '../../helpers/types';
 import Button from '../Button/Button';
-import Counter from '../Counter/Counter';
+import useCart from '../../hooks/useCart';
+
+import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
+import stockImage from '../../assets/product-xx99-mark-two-headphones/mobile/image-product.jpg';
 
 const ProductInfo = ({ ...product }: ProductContent) => {
+  const [quantity, setQuantity] = useState<number>(1);
+  const [item, setItem] = useState<CartProductContent>({
+    id: 0,
+    name: '',
+    image: stockImage,
+    price: 0,
+    quantity: 0,
+  });
+  const { addToCart } = useCart();
+
+  useEffect(() => {
+    const itemToCart: CartProductContent = {
+      id: product.id,
+      name: product.name,
+      image: product.image,
+      price: product.price,
+      quantity: quantity,
+    };
+
+    setItem(itemToCart);
+  }, [quantity]);
+
+  const addToCartHandler = () => {
+    addToCart(item);
+  };
+
   return (
     <>
       <section className="w-full min-h-[65px] flex items-center">
@@ -24,7 +53,7 @@ const ProductInfo = ({ ...product }: ProductContent) => {
           </p>
         ) : null}
         <h2 className="text-2xl font-bold tracking-wider text-black uppercase">
-          {product.name}
+          {product.name + ' ' + product.category}
         </h2>
         <p className="font-medium leading-6 text-black opacity-50 text-[15px]">
           {product.description}
@@ -33,8 +62,23 @@ const ProductInfo = ({ ...product }: ProductContent) => {
           $ {product.price.toLocaleString()}
         </h4>
         <div className="flex items-center justify-center w-full gap-4 mt-4">
-          <Counter />
-          <Button type="Cart" />
+          <div className="flex w-[120px] h-[48px] items-center justify-between bg-light-grey">
+            <button
+              className="flex items-center justify-center w-1/3 h-full bg-transparent hover:bg-black/10 disabled:hover:bg-transparent"
+              onClick={() => setQuantity(quantity - 1)}
+              disabled={quantity === 1 ? true : false}
+            >
+              <AiOutlineMinus size={12} className="text-black opacity-25" />
+            </button>
+            <p className="text-sm font-bold tracking-wider">{quantity}</p>
+            <button
+              className="flex items-center justify-center w-1/3 h-full bg-transparent hover:bg-black/10"
+              onClick={() => setQuantity(quantity + 1)}
+            >
+              <AiOutlinePlus size={12} className="text-black opacity-25" />
+            </button>
+          </div>
+          <Button variant="Cart" onClick={addToCartHandler} />
         </div>
       </section>
       <section className="mb-16">
@@ -94,7 +138,7 @@ const ProductInfo = ({ ...product }: ProductContent) => {
                       additional.referenceCategory
                 }`}
               >
-                <Button type="Product" style="Standard" />
+                <Button variant="Product" color="Standard" />
               </Link>
             </div>
           ))}

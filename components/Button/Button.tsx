@@ -1,25 +1,29 @@
-import React from 'react';
+import { DetailedHTMLProps } from 'react';
 
-interface ButtonProps {
-  type: 'Product' | 'Cart' | 'Custom';
-  style?: 'Standard' | 'Black' | 'Outline';
+interface ButtonProps
+  extends DetailedHTMLProps<
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  > {
+  variant: 'Product' | 'Cart' | 'Custom';
+  color?: 'Standard' | 'Black' | 'Outline';
   children?: React.ReactNode;
 }
 
-const Button = ({ type, style, children }: ButtonProps) => {
-  if (type === 'Product') {
+const Button = ({ variant, color, children, ...props }: ButtonProps) => {
+  if (variant === 'Product') {
     return (
       <button
         className={`w-[160px] h-[48px] ${
-          style === 'Standard'
+          color === 'Standard'
             ? 'bg-burnt-orange text-white border border-transparent'
             : undefined
         } ${
-          style === 'Black'
+          color === 'Black'
             ? 'bg-black text-white border border-transparent'
             : undefined
         } ${
-          style === 'Outline'
+          color === 'Outline'
             ? 'bg-transparent text-black border border-black'
             : undefined
         } font-semibold uppercase tracking tracking-wider text-sm`}
@@ -29,9 +33,12 @@ const Button = ({ type, style, children }: ButtonProps) => {
     );
   }
 
-  if (type === 'Cart') {
+  if (variant === 'Cart') {
     return (
-      <button className="w-[160px] h-[48px] bg-burnt-orange text-white font-semibold uppercase tracking tracking-wider text-sm">
+      <button
+        className="w-[160px] h-[48px] bg-burnt-orange text-white font-semibold uppercase tracking tracking-wider text-sm"
+        {...props}
+      >
         Add To Cart
       </button>
     );
