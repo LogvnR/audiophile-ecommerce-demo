@@ -25,7 +25,11 @@ const ShopCategories = () => {
   return (
     <div className="box-border w-full px-6 my-8">
       {CategoryInfo.map((category) => (
-        <CategoryCard image={category.image} title={category.title} />
+        <CategoryCard
+          image={category.image}
+          title={category.title}
+          key={category.title}
+        />
       ))}
     </div>
   );

@@ -22,10 +22,7 @@ const ProductInfo = ({ ...product }: ProductContent) => {
 
   useEffect(() => {
     const itemToCart: CartProductContent = {
-      id: product.id,
-      name: product.name,
-      image: product.image,
-      price: product.price,
+      ...product,
       quantity: quantity,
     };
 

@@ -1,6 +1,8 @@
-import React from 'react';
-import Counter from '../Counter/Counter';
+import { useEffect } from 'react';
+
+import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 import { CartProductContent } from '../../helpers/types';
+import useCart from '../../hooks/useCart';
 import Image from 'next/image';
 
 interface CartItemProps {
@@ -8,6 +10,19 @@ interface CartItemProps {
 }
 
 const CartItem = ({ cartItemContent }: CartItemProps) => {
+  const { adjustQuantity, removeItem, adjustTotal } = useCart();
+
+  useEffect(() => {
+    if (cartItemContent.quantity === 0) {
+      removeItem(cartItemContent.id);
+    }
+  }, [cartItemContent.quantity]);
+
+  const itemQuantityHandler = (action: 'add' | 'remove') => {
+    adjustQuantity(cartItemContent.id, action);
+    adjustTotal(cartItemContent.price, action);
+  };
+
   return (
     <div className="flex items-center justify-between gap-3">
       <Image
@@ -24,7 +39,23 @@ const CartItem = ({ cartItemContent }: CartItemProps) => {
         </h4>
       </div>
       <div className="w-full">
-        <Counter quantity={cartItemContent.quantity} type="sm" />
+        <div className="flex w-[96px] h-[32px] items-center justify-between bg-light-grey">
+          <button
+            className="flex justify-center w-1/3 bg-transparent"
+            onClick={() => itemQuantityHandler('remove')}
+          >
+            <AiOutlineMinus size={12} className="text-black opacity-25" />
+          </button>
+          <p className="text-sm font-bold tracking-wider">
+            {cartItemContent.quantity}
+          </p>
+          <button
+            className="flex justify-center w-1/3 bg-transparent"
+            onClick={() => itemQuantityHandler('add')}
+          >
+            <AiOutlinePlus size={12} className="text-black opacity-25" />
+          </button>
+        </div>
       </div>
     </div>
   );

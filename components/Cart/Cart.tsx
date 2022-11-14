@@ -1,11 +1,15 @@
-import React from 'react';
+import { useEffect } from 'react';
 import Button from '../Button/Button';
 import CartItem from '../Cart Item/CartItem';
 
 import useCart from '../../hooks/useCart';
 
 const Cart = () => {
-  const { cart } = useCart();
+  const { cart, total } = useCart();
+
+  useEffect(() => {
+    console.log(cart);
+  }, [cart]);
   return (
     <div className="flex flex-col w-full p-1 font-Manrope">
       <section className="flex items-center justify-between w-full mb-4">
@@ -32,7 +36,7 @@ const Cart = () => {
           total
         </h4>
         <h4 className="text-lg font-bold tracking-wider text-black uppercase tracking">
-          $ 9,999
+          $ {total.toLocaleString()}
         </h4>
       </section>
       <Button variant="Custom">Checkout</Button>
