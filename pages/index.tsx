@@ -40,8 +40,8 @@ const Home = () => {
               Experience natural, lifelike audio and exceptional build quality
               made for the passionate music enthusiast.
             </p>
-            <Link href="/products/headphones/xx99-mark-ii-headphones">
-              <Button type="Product" style="Standard" />
+            <Link href="/products/headphones/xx99-mark-ii">
+              <Button variant="Product" color="Standard" />
             </Link>
           </div>
         </div>
@@ -64,8 +64,8 @@ const Home = () => {
               Upgrade to premium speakers that are phenomenally built to deliver
               truly remarkable sound.
             </p>
-            <Link href="/products/headphones/zx9-speaker">
-              <Button type="Product" style="Black" />
+            <Link href="/products/headphones/zx9">
+              <Button variant="Product" color="Black" />
             </Link>
           </div>
         </div>
@@ -74,8 +74,8 @@ const Home = () => {
           <h2 className="text-3xl font-bold tracking-wider text-black uppercase font-Manrope">
             zx7 speaker
           </h2>
-          <Link href="/products/headphones/zx7-speaker">
-            <Button type="Product" style="Outline" />
+          <Link href="/products/headphones/zx7">
+            <Button variant="Product" color="Outline" />
           </Link>
         </div>
         {/* == Dual Yx1 Earphones Card */}
@@ -89,8 +89,8 @@ const Home = () => {
             <h2 className="text-3xl font-bold tracking-wider text-black uppercase font-Manrope">
               yx1 earphones
             </h2>
-            <Link href="/products/headphones/yx1-earphones">
-              <Button type="Product" style="Outline" />
+            <Link href="/products/headphones/yx1">
+              <Button variant="Product" color="Outline" />
             </Link>
           </div>
         </div>

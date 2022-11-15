@@ -3,6 +3,7 @@ import Button from '../Button/Button';
 import CartItem from '../Cart Item/CartItem';
 
 import useCart from '../../hooks/useCart';
+import Link from 'next/link';
 
 const Cart = () => {
   const { cart, total, totalItems } = useCart();
@@ -39,7 +40,9 @@ const Cart = () => {
           $ {total.toLocaleString()}
         </h4>
       </section>
-      <Button variant="Custom">Checkout</Button>
+      <Link href="/checkout">
+        <Button variant="Custom">Checkout</Button>
+      </Link>
     </div>
   );
 };
