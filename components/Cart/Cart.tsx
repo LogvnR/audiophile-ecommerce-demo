@@ -5,7 +5,7 @@ import CartItem from '../Cart Item/CartItem';
 import useCart from '../../hooks/useCart';
 
 const Cart = () => {
-  const { cart, total } = useCart();
+  const { cart, total, totalItems } = useCart();
 
   useEffect(() => {
     console.log(cart);
@@ -14,7 +14,7 @@ const Cart = () => {
     <div className="flex flex-col w-full p-1 font-Manrope">
       <section className="flex items-center justify-between w-full mb-4">
         <h4 className="text-lg font-bold tracking-wider text-black uppercase tracking">
-          cart (0)
+          cart ({totalItems})
         </h4>
         <h4 className="font-medium leading-4 text-black border-b opacity-50 border-black/50">
           Remove all

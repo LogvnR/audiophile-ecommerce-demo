@@ -127,13 +127,7 @@ const ProductInfo = ({ ...product }: ProductContent) => {
                 {additional.referenceName}
               </h4>
               <Link
-                href={`/products/${product.category}/${
-                  additional.referenceCategory === 'speaker'
-                    ? additional.referenceName.replace(/\s/g, '-')
-                    : additional.referenceName.replace(/\s/g, '-') +
-                      '-' +
-                      additional.referenceCategory
-                }`}
+                href={`/products/${product.category}/${additional.referenceName}`}
               >
                 <Button variant="Product" color="Standard" />
               </Link>
