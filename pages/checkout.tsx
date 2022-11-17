@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import Navbar from '../components/Navbar/Navbar';
 import Form from '../components/Form/Form';
 import Footer from '../components/Footer/Footer';
+import Summary from '../components/Form/Form Sections/Summary';
 
 const Checkout = () => {
   const router = useRouter();
@@ -26,6 +27,7 @@ const Checkout = () => {
           </button>
         </section>
         <Form />
+        <Summary />
       </div>
       <Footer hasFooterAddition={false} />
     </main>

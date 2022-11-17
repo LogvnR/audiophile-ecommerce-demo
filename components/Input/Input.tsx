@@ -1,12 +1,11 @@
-import React from 'react';
-
 interface InputProps {
   title: string;
   typeOf: string;
   placeholder: string;
+  onAction: React.ChangeEventHandler<HTMLInputElement>;
 }
 
-const Input = ({ typeOf, title, placeholder }: InputProps) => {
+const Input = ({ typeOf, title, placeholder, onAction }: InputProps) => {
   return (
     <div className="flex flex-col w-full gap-2 font-Manrope">
       <label
@@ -20,6 +19,7 @@ const Input = ({ typeOf, title, placeholder }: InputProps) => {
           id={title.replace(/\s+/g, '').toLowerCase()}
           type={typeOf}
           placeholder={placeholder}
+          onChange={onAction}
           className="w-full text-sm font-bold tracking-tight text-black bg-transparent outline-none caret-burnt-orange placeholder:text-black/40"
         />
       </div>

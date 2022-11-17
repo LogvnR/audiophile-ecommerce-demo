@@ -2,7 +2,6 @@ import React from 'react';
 import Billing from './Form Sections/Billing';
 import Payment from './Form Sections/Payment';
 import Shipping from './Form Sections/Shipping';
-import Summary from './Form Sections/Summary';
 
 const Form = () => {
   return (
@@ -15,7 +14,6 @@ const Form = () => {
         <Shipping />
         <Payment />
       </form>
-      <Summary />
     </>
   );
 };

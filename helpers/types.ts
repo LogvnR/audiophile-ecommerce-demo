@@ -32,3 +32,28 @@ export type CartProductContent = {
   price: number;
   quantity: number;
 };
+
+export type UserCheckoutDetails = {
+  billing: Billing;
+  shipping: Shipping;
+  payment: Payment;
+};
+
+export interface Billing {
+  fullName: string;
+  emailAddress: string;
+  phoneNumber: number;
+}
+
+export interface Shipping {
+  homeAddress: string;
+  zipCode: number;
+  city: string;
+  country: string;
+}
+
+export interface Payment {
+  isEMoney: boolean;
+  eMoneyNumber?: number;
+  eMoneyPin?: number;
+}
