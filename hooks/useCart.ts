@@ -11,6 +11,7 @@ interface CartStore {
   adjustQuantity: (id: number, action: 'add' | 'remove') => void;
   adjustTotal: (amount: number, action: 'add' | 'remove') => void;
   removeItem: (id: number) => void;
+  resetCart: () => void;
 }
 
 const useCart = create<CartStore>((set) => ({
@@ -58,6 +59,13 @@ const useCart = create<CartStore>((set) => ({
   removeItem: (id: number) => {
     set((state) => ({
       cart: state.cart.filter((item) => item.id !== id),
+    }));
+  },
+  resetCart: () => {
+    set(() => ({
+      cart: [],
+      total: 0,
+      totalItems: 0,
     }));
   },
 }));

@@ -8,6 +8,7 @@ import useCart from '../../hooks/useCart';
 
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 import stockImage from '../../assets/product-xx99-mark-two-headphones/mobile/image-product.jpg';
+import { useRouter } from 'next/router';
 
 const ProductInfo = ({ ...product }: ProductContent) => {
   const [quantity, setQuantity] = useState<number>(1);
@@ -19,6 +20,7 @@ const ProductInfo = ({ ...product }: ProductContent) => {
     quantity: 0,
   });
   const { addToCart } = useCart();
+  const router = useRouter();
 
   useEffect(() => {
     const itemToCart: CartProductContent = {
@@ -27,7 +29,7 @@ const ProductInfo = ({ ...product }: ProductContent) => {
     };
 
     setItem(itemToCart);
-  }, [quantity]);
+  }, [quantity, router.asPath]);
 
   const addToCartHandler = () => {
     addToCart(item);
@@ -124,7 +126,11 @@ const ProductInfo = ({ ...product }: ProductContent) => {
                 alt={`Reference Photo for ${additional.referenceName}`}
               />
               <h4 className="text-2xl font-bold leading-9 tracking-wider text-center text-black uppercase ">
-                {additional.referenceName}
+                {additional.referenceCategory === 'speaker'
+                  ? additional.referenceName +
+                    ' ' +
+                    additional.referenceCategory
+                  : additional.referenceName}
               </h4>
               <Link
                 href={`/products/${product.category}/${additional.referenceName}`}

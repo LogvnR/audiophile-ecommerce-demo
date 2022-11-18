@@ -85,7 +85,7 @@ export const data: ProductContent[] = [
         referencePhoto: xx59Preview,
       },
       {
-        referenceName: 'zx9 speaker',
+        referenceName: 'zx9',
         referenceCategory: 'speaker',
         referencePhoto: zx9Preview,
       },
@@ -135,7 +135,7 @@ export const data: ProductContent[] = [
         referencePhoto: xx59Preview,
       },
       {
-        referenceName: 'zx9 speaker',
+        referenceName: 'zx9',
         referenceCategory: 'speaker',
         referencePhoto: zx9Preview,
       },
@@ -185,7 +185,7 @@ export const data: ProductContent[] = [
         referencePhoto: xx99Mark1Preview,
       },
       {
-        referenceName: 'zx9 speaker',
+        referenceName: 'zx9',
         referenceCategory: 'speaker',
         referencePhoto: zx9Preview,
       },
@@ -229,7 +229,7 @@ export const data: ProductContent[] = [
     productPhotos: [zx9Gallery1, zx9Gallery2, zx9Gallery3],
     productReference: [
       {
-        referenceName: 'zx7 speaker',
+        referenceName: 'zx7',
         referenceCategory: 'speaker',
         referencePhoto: zx7Preview,
       },
@@ -283,7 +283,7 @@ export const data: ProductContent[] = [
     productPhotos: [zx7Gallery1, zx7Gallery2, zx7Gallery3],
     productReference: [
       {
-        referenceName: 'zx9 speaker',
+        referenceName: 'zx9',
         referenceCategory: 'speaker',
         referencePhoto: zx9Preview,
       },
@@ -347,7 +347,7 @@ export const data: ProductContent[] = [
         referencePhoto: xx59Preview,
       },
       {
-        referenceName: 'zx9 speaker',
+        referenceName: 'zx9',
         referenceCategory: 'speaker',
         referencePhoto: zx9Preview,
       },

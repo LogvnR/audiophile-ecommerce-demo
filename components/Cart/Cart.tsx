@@ -6,7 +6,7 @@ import useCart from '../../hooks/useCart';
 import Link from 'next/link';
 
 const Cart = () => {
-  const { cart, total, totalItems } = useCart();
+  const { cart, total, totalItems, resetCart } = useCart();
 
   useEffect(() => {
     console.log(cart);
@@ -17,9 +17,11 @@ const Cart = () => {
         <h4 className="text-lg font-bold tracking-wider text-black uppercase tracking">
           cart ({totalItems})
         </h4>
-        <h4 className="font-medium leading-4 text-black border-b opacity-50 border-black/50">
-          Remove all
-        </h4>
+        <button onClick={() => resetCart()}>
+          <h4 className="font-medium leading-4 text-black border-b opacity-50 border-black/50">
+            Remove all
+          </h4>
+        </button>
       </section>
       {cart.length > 0 ? (
         <section className="flex flex-col gap-6">
