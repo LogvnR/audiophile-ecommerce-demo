@@ -24,7 +24,7 @@ const Cart = () => {
       {cart.length > 0 ? (
         <section className="flex flex-col gap-6">
           {cart.map((product) => (
-            <CartItem cartItemContent={product} />
+            <CartItem cartItemContent={product} variant="Counter" />
           ))}
         </section>
       ) : (

@@ -7,9 +7,10 @@ import Image from 'next/image';
 
 interface CartItemProps {
   cartItemContent: CartProductContent;
+  variant: 'Counter' | 'Quantity';
 }
 
-const CartItem = ({ cartItemContent }: CartItemProps) => {
+const CartItem = ({ cartItemContent, variant }: CartItemProps) => {
   const { adjustQuantity, removeItem, adjustTotal } = useCart();
 
   useEffect(() => {
@@ -39,23 +40,31 @@ const CartItem = ({ cartItemContent }: CartItemProps) => {
         </h4>
       </div>
       <div className="w-full">
-        <div className="flex w-[96px] h-[32px] items-center justify-between bg-light-grey">
-          <button
-            className="flex justify-center w-1/3 bg-transparent"
-            onClick={() => itemQuantityHandler('remove')}
-          >
-            <AiOutlineMinus size={12} className="text-black opacity-25" />
-          </button>
-          <p className="text-sm font-bold tracking-wider">
-            {cartItemContent.quantity}
-          </p>
-          <button
-            className="flex justify-center w-1/3 bg-transparent"
-            onClick={() => itemQuantityHandler('add')}
-          >
-            <AiOutlinePlus size={12} className="text-black opacity-25" />
-          </button>
-        </div>
+        {variant === 'Counter' ? (
+          <div className="flex w-[96px] h-[32px] items-center justify-between bg-light-grey">
+            <button
+              className="flex justify-center w-1/3 bg-transparent"
+              onClick={() => itemQuantityHandler('remove')}
+            >
+              <AiOutlineMinus size={12} className="text-black opacity-25" />
+            </button>
+            <p className="text-sm font-bold tracking-wider">
+              {cartItemContent.quantity}
+            </p>
+            <button
+              className="flex justify-center w-1/3 bg-transparent"
+              onClick={() => itemQuantityHandler('add')}
+            >
+              <AiOutlinePlus size={12} className="text-black opacity-25" />
+            </button>
+          </div>
+        ) : (
+          <div className="flex items-center justify-end w-full">
+            <p className="text-sm font-bold leading-6 tracking-wider text-black/50">
+              x{cartItemContent.quantity}
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );
