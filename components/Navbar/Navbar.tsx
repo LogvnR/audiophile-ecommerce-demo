@@ -6,10 +6,9 @@ import Image from 'next/image';
 import logo from '../../assets/shared/desktop/logo.svg';
 import menu from '../../assets/shared/tablet/icon-hamburger.svg';
 import cart from '../../assets/shared/desktop/icon-cart.svg';
-import Button from '../Button/Button';
 import ShopCategories from '../Shop Categories/ShopCategories';
-import CartItem from '../Cart Item/CartItem';
 import Cart from '../Cart/Cart';
+import useCart from '../../hooks/useCart';
 
 interface NavbarProps {
   variant: 'transparent' | 'black';
@@ -18,6 +17,8 @@ interface NavbarProps {
 const Navbar = ({ variant }: NavbarProps) => {
   const [cartModal, setCartModal] = useState<boolean>(false);
   const [menuModal, setMenuModal] = useState<boolean>(false);
+  const { totalItems } = useCart();
+
   return (
     <>
       <Modal
@@ -43,8 +44,16 @@ const Navbar = ({ variant }: NavbarProps) => {
             <Image src={logo} alt="audiophile.com" width={143} height={25} />
           </Link>
         </div>
-        <button onClick={() => setCartModal(true)}>
+        <button
+          onClick={() => setCartModal(true)}
+          className="w-[23px] h-[20px] relative"
+        >
           <Image src={cart} alt="My Cart" width={23} height={20} />
+          {totalItems > 0 ? (
+            <div className="w-[16px] h-[16px] absolute -top-3 -right-3 bg-burnt-orange rounded-full flex justify-center items-center text-white text-[10px]">
+              {totalItems < 10 ? totalItems : '9+'}
+            </div>
+          ) : null}
         </button>
       </nav>
       <Drawer
