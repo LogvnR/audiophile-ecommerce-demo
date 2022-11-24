@@ -9,6 +9,7 @@ import useCart from '../../hooks/useCart';
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 import stockImage from '../../assets/product-xx99-mark-two-headphones/mobile/image-product.jpg';
 import { useRouter } from 'next/router';
+import CartItem from '../Cart Item/CartItem';
 
 const ProductInfo = ({ ...product }: ProductContent) => {
   const [quantity, setQuantity] = useState<number>(1);
@@ -19,7 +20,7 @@ const ProductInfo = ({ ...product }: ProductContent) => {
     price: 0,
     quantity: 0,
   });
-  const { addToCart } = useCart();
+  const { addToCart, cart, adjustQuantity, adjustTotal } = useCart();
   const router = useRouter();
 
   useEffect(() => {
@@ -32,7 +33,12 @@ const ProductInfo = ({ ...product }: ProductContent) => {
   }, [quantity, router.asPath]);
 
   const addToCartHandler = () => {
-    addToCart(item);
+    if (cart.some((newItem) => newItem.id === product.id)) {
+      adjustQuantity(product.id, 'add', quantity);
+      adjustTotal(product.price * quantity, 'add');
+    } else {
+      addToCart(item);
+    }
   };
 
   return (

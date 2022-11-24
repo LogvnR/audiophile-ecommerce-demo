@@ -8,7 +8,11 @@ interface CartStore {
   total: number;
   totalItems: number;
   addToCart: ({}: CartProductContent) => void;
-  adjustQuantity: (id: number, action: 'add' | 'remove') => void;
+  adjustQuantity: (
+    id: number,
+    action: 'add' | 'remove',
+    amount: number
+  ) => void;
   adjustTotal: (amount: number, action: 'add' | 'remove') => void;
   removeItem: (id: number) => void;
   resetCart: () => void;
@@ -24,24 +28,30 @@ const useCart = create<CartStore>((set) => ({
       total: state.total + props.price * props.quantity,
       totalItems: state.totalItems + props.quantity,
     })),
-  adjustQuantity: (id: number, action: 'add' | 'remove') => {
+  adjustQuantity: (id: number, action: 'add' | 'remove', amount: number) => {
     if (action === 'add') {
       set((state) => ({
         cart: state.cart.map((item) =>
           item.id === id
-            ? ({ ...item, quantity: item.quantity + 1 } as CartProductContent)
+            ? ({
+                ...item,
+                quantity: item.quantity + amount,
+              } as CartProductContent)
             : item
         ),
-        totalItems: state.totalItems + 1,
+        totalItems: state.totalItems + amount,
       }));
     } else {
       set((state) => ({
         cart: state.cart.map((item) =>
           item.id === id
-            ? ({ ...item, quantity: item.quantity - 1 } as CartProductContent)
+            ? ({
+                ...item,
+                quantity: item.quantity - amount,
+              } as CartProductContent)
             : item
         ),
-        totalItems: state.totalItems - 1,
+        totalItems: state.totalItems - amount,
       }));
     }
   },

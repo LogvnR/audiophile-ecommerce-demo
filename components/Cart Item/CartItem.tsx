@@ -20,7 +20,7 @@ const CartItem = ({ cartItemContent, variant }: CartItemProps) => {
   }, [cartItemContent.quantity]);
 
   const itemQuantityHandler = (action: 'add' | 'remove') => {
-    adjustQuantity(cartItemContent.id, action);
+    adjustQuantity(cartItemContent.id, action, 1);
     adjustTotal(cartItemContent.price, action);
   };
 
