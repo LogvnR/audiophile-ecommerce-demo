@@ -43,6 +43,7 @@ const headphones = () => {
             newProduct={product.newProduct}
             image={product.image}
             category={product.category}
+            key={product.id}
           />
         ))}
       </div>

@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import Button from '../Button/Button';
 import CartItem from '../Cart Item/CartItem';
 
@@ -8,9 +7,6 @@ import Link from 'next/link';
 const Cart = () => {
   const { cart, total, totalItems, resetCart } = useCart();
 
-  useEffect(() => {
-    console.log(cart);
-  }, [cart]);
   return (
     <div className="flex flex-col w-full p-1 font-Manrope">
       <section className="flex items-center justify-between w-full mb-4">

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Modal, Drawer } from '@mantine/core';
 import Image from 'next/image';
 
@@ -9,6 +9,7 @@ import cart from '../../assets/shared/desktop/icon-cart.svg';
 import ShopCategories from '../Shop Categories/ShopCategories';
 import Cart from '../Cart/Cart';
 import useCart from '../../hooks/useCart';
+import { ProductContent, CartProductContent } from '../../helpers/types';
 
 interface NavbarProps {
   variant: 'transparent' | 'black';

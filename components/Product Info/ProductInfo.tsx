@@ -91,8 +91,11 @@ const ProductInfo = ({ ...product }: ProductContent) => {
           features
         </h3>
         <div className="flex flex-col w-full gap-y-6">
-          {product.features.map((feature) => (
-            <p className="font-medium leading-6 text-black opacity-50 text-[15px]">
+          {product.features.map((feature, index) => (
+            <p
+              key={index}
+              className="font-medium leading-6 text-black opacity-50 text-[15px]"
+            >
               {feature}
             </p>
           ))}
@@ -103,8 +106,8 @@ const ProductInfo = ({ ...product }: ProductContent) => {
           in the box
         </h3>
         <div className="flex flex-col w-full gap-y-3">
-          {product.included.map((includes) => (
-            <div className="flex gap-6">
+          {product.included.map((includes, index) => (
+            <div className="flex gap-6" key={index}>
               <p className="font-bold leading-6 text-burnt-orange">
                 {includes.quantity}x
               </p>
@@ -116,8 +119,13 @@ const ProductInfo = ({ ...product }: ProductContent) => {
         </div>
       </section>
       <section className="mb-16">
-        {product.productPhotos.map((photo) => (
-          <Image src={photo} alt="Product Photo" className="mb-5 rounded-lg" />
+        {product.productPhotos.map((photo, index) => (
+          <Image
+            src={photo}
+            alt="Product Photo"
+            className="mb-5 rounded-lg"
+            key={index}
+          />
         ))}
       </section>
       <section className="mb-16">
@@ -125,8 +133,11 @@ const ProductInfo = ({ ...product }: ProductContent) => {
           you may also like
         </h3>
         <div className="flex flex-col w-full">
-          {product.productReference.map((additional) => (
-            <div className="flex flex-col items-center w-full mb-16 gap-y-6">
+          {product.productReference.map((additional, index) => (
+            <div
+              className="flex flex-col items-center w-full mb-16 gap-y-6"
+              key={index}
+            >
               <Image
                 src={additional.referencePhoto}
                 alt={`Reference Photo for ${additional.referenceName}`}

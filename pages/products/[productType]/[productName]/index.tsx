@@ -32,7 +32,7 @@ const index = () => {
       <Navbar variant="black" />
       <div className="w-full px-6">
         {product.map((product) => (
-          <ProductInfo {...product} />
+          <ProductInfo {...product} key={product.id} />
         ))}
       </div>
       <ShopCategories />
